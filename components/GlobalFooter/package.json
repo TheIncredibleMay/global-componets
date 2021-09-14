@@ -1,6 +1,6 @@
 {
-    "name": "@mayshowumioplo/footer",
-    "version": "0.0.2",
+    "name": "@mayshowumioplo/global-footer-shadow",
+    "version": "0.0.0",
     "publishConfig": {
         "access": "public"
     }
