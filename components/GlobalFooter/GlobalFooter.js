@@ -234,6 +234,8 @@ class Footer extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+  }
+  connectedCallback() {
     let footerclass = this.shadowRoot.getElementById('footer-variant').className;
     this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${this.getAttribute('variant')}`;
     if(this.getAttribute('variant') === 'secondary'){
@@ -244,5 +246,6 @@ class Footer extends HTMLElement {
     }
   }
 }
+
 
 window.customElements.define('global-footer', Footer)
