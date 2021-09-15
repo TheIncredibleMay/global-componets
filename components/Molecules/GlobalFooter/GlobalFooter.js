@@ -234,12 +234,11 @@ class GlobalFooter extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
-    console.log('test 1')
   }
-  connectedCallback() {
-    console.log('test 2',this.getAttribute('variant'))
+  async connectedCallback() {
+    let variant = await this.getAttribute('variant');
     let footerclass = this.shadowRoot.getElementById('footer-variant').className;
-    this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${this.getAttribute('variant')}`;
+    this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${variant}`;
     if(this.getAttribute('variant') === 'secondary'){
       let all = this.shadowRoot.querySelectorAll('.no-display-secondary')
       for (let i = 0; i < all.length; i++) {
