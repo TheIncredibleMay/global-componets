@@ -230,6 +230,8 @@ id="footer-variant"
 
 
 class Footer extends HTMLElement {
+  // A getter/setter for an open property.
+  
   constructor(){
     super();
     this.attachShadow({mode: 'open'});
@@ -237,6 +239,7 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     let footerclass = this.shadowRoot.getElementById('footer-variant').className;
+    console.log(this.getAttribute('variant'));
     this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${this.getAttribute('variant')}`;
     if(this.getAttribute('variant') === 'secondary'){
       let all = this.shadowRoot.querySelectorAll('.no-display-secondary')
