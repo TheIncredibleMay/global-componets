@@ -1,6 +1,10 @@
 {
   "packages": [
-    "components/*"
+    "components/Atoms/*",
+    "components/Molecules/*",
+    "components/Organisms/*",
+    "components/Templates/*",
+    "components/Pages/*"
   ],
   "version": "0.1.2"
 }
