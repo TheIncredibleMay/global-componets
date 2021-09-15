@@ -236,10 +236,11 @@ class Footer extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+    console.log('test 1');
   }
   connectedCallback() {
     let footerclass = this.shadowRoot.getElementById('footer-variant').className;
-    console.log(this.getAttribute('variant'));
+    console.log('test 2', this.getAttribute('variant'));
     this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${this.getAttribute('variant')}`;
     if(this.getAttribute('variant') === 'secondary'){
       let all = this.shadowRoot.querySelectorAll('.no-display-secondary')
