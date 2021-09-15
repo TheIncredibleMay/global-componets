@@ -234,8 +234,10 @@ class GlobalFooter extends HTMLElement {
     super();
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(footerTemplate.content.cloneNode(true));
+    console.log('test 1')
   }
   connectedCallback() {
+    console.log('test 2',this.getAttribute('variant'))
     let footerclass = this.shadowRoot.getElementById('footer-variant').className;
     this.shadowRoot.querySelector('#footer-variant').className = `${footerclass} ${this.getAttribute('variant')}`;
     if(this.getAttribute('variant') === 'secondary'){
